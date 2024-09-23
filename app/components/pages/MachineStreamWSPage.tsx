@@ -9,7 +9,6 @@ export const MachineStreamWSPage = ({ machines }: { machines: Array<Machine> }) 
     // @ts-ignore
     machines.reduce((acc, curr) => ((acc[curr.id] = curr.status), acc), {}),
   );
-  console.log(machineStatuses);
 
   const socketUrl = "ws://localhost:4000";
 
