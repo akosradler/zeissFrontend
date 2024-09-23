@@ -1,8 +1,8 @@
-import { Box, Typography, Container, Skeleton } from "@mui/material";
-import { MachineStreamGrid } from "./MachineStreamGrid";
+import { Container, Skeleton } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { BASE_URL } from "~/utils/constants";
 import { Machine } from "~/model/machine";
+import { MachineStreamWSPage } from "./MachineStreamWSPage";
 
 export const MachineStreamPage = () => {
   const {
@@ -20,7 +20,7 @@ export const MachineStreamPage = () => {
 
   return (
     <Container maxWidth="lg">
-      <MachineStreamGrid machines={machines} />
+      <MachineStreamWSPage machines={machines} />
     </Container>
   );
 };

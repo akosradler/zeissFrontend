@@ -1,14 +1,14 @@
-import { json, LoaderFunctionArgs, type MetaFunction } from "@remix-run/node";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MachineStreamDetails } from "~/components/MachineStreamDetails";
+import { type MetaFunction } from "@remix-run/node";
+
+import { MachineStreamDetailsPage } from "~/components/pages/MachineStreamDetailsPage";
 import { useParams } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [{ title: "ZEISS Machine Stream details" }, { name: "description", content: "ZEISS Machine Stream details" }];
 };
 
-export default function MachineStreamDetailsPage() {
+export default function MachineStreamDetailsIndex() {
   const params = useParams();
 
-  return <MachineStreamDetails id={params["id"]} />;
+  return <MachineStreamDetailsPage id={params["id"]} />;
 }

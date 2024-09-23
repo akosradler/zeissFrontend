@@ -3,8 +3,15 @@ import React from "react";
 import { Machine } from "~/model/machine";
 import { IconDirectionSignFilled } from "@tabler/icons-react";
 import { useNavigate } from "@remix-run/react";
+import { MachineEvent } from "~/model/machineEvent";
 
-export const MachineStreamGrid = ({ machines }: { machines: Array<Machine> }) => {
+export const MachineStreamGrid = ({
+  machines,
+  machineStatuses,
+}: {
+  machines: Array<Machine>;
+  machineStatuses: any;
+}) => {
   const navigate = useNavigate();
   return (
     <Grid2 container spacing={2} justifyContent={"center"}>
@@ -28,7 +35,7 @@ export const MachineStreamGrid = ({ machines }: { machines: Array<Machine> }) =>
                 <Divider />
               </Grid2>
               <Grid2 size={6}>Status</Grid2>
-              <Grid2 size={6}>{machine.status}</Grid2>
+              <Grid2 size={6}>{machineStatuses[machine.id]}</Grid2>
               <Grid2 size={12}>
                 <Divider />
               </Grid2>
