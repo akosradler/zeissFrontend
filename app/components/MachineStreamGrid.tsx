@@ -1,9 +1,11 @@
-import { Divider, Grid2, Paper } from "@mui/material";
-import { useLoaderData } from "@remix-run/react";
+import { Divider, Grid2, IconButton, Paper } from "@mui/material";
 import React from "react";
 import { Machine } from "~/model/machine";
+import { IconDirectionSignFilled } from "@tabler/icons-react";
+import { useNavigate } from "@remix-run/react";
 
 export const MachineStreamGrid = ({ machines }: { machines: Array<Machine> }) => {
+  const navigate = useNavigate();
   return (
     <Grid2 container spacing={2} justifyContent={"center"}>
       {machines.map(machine => (
@@ -27,6 +29,15 @@ export const MachineStreamGrid = ({ machines }: { machines: Array<Machine> }) =>
               </Grid2>
               <Grid2 size={6}>Status</Grid2>
               <Grid2 size={6}>{machine.status}</Grid2>
+              <Grid2 size={12}>
+                <Divider />
+              </Grid2>
+              <Grid2 size={6}>Details</Grid2>
+              <Grid2 size={6}>
+                <IconButton aria-label="Details" onClick={() => navigate(`/machine/${machine.id}`)}>
+                  <IconDirectionSignFilled />
+                </IconButton>
+              </Grid2>
             </Grid2>
           </Paper>
         </Grid2>

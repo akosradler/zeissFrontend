@@ -19,13 +19,8 @@ export const MachineStreamPage = () => {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <Box display={"flex"} alignItems={"center"} flexDirection={"column"} justifyContent={"center"}>
-      <Typography variant="h1" sx={{ mb: 2 }}>
-        ZEISS Machine Stream monitor
-      </Typography>
-      <Container maxWidth="lg">
-        <MachineStreamGrid machines={machines} />
-      </Container>
-    </Box>
+    <Container maxWidth="lg">
+      <MachineStreamGrid machines={machines} />
+    </Container>
   );
 };

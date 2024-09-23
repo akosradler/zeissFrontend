@@ -5,7 +5,7 @@ export const machineSchema = z.object({
   id: z.string(),
   floor: z.number(),
   install_date: z.string().date(),
-  last_maintanence: z.string().date(),
+  last_maintenance: z.string().date(),
   latitude: z.number(),
   longitude: z.number(),
   machine_type: z.string(),
